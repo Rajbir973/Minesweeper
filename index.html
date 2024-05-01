@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minesweeper</title>
+  </head>
+  <style>
+    table {
+      border: 1px solid rgb(236, 236, 236);
+      text-align: center;
+      color: white;
+      width: 50%;
+      height: 50%;
+    }
+
+    tr,
+    td,
+    thead,
+    th {
+      width: 30px;
+      height: 30px;
+      border: 1px solid rgb(51, 185, 125);
+      padding: 10px;
+      /* overflow: scroll;Nikk */
+    }
+
+    .flex {
+      display: flex;
+      justify-content: center;
+    }
+
+    body {
+      background-color: black;
+    }
+
+    h3 {
+      color: #cea1ac;
+      text-align: center;
+    }
+
+    .multi {
+      background-color: rgb(20, 75, 177);
+      color: #cea1ac;
+      pointer-events: none;
+    }
+
+    .btn-styling {
+      background-color: rgb(26, 128, 190);
+      border: none;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    .div-styling {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10%;
+    }
+
+    #winnerTable {
+      visibility: hidden;
+      table-layout: fixed;
+    }
+
+    #winnerTable td {
+      width: 100%;
+      overflow: auto;
+      padding: 10px;
+      overflow-wrap: break-word;
+    }
+  </style>
+
+  <body>
+    <div class="div-styling" id="div1">
+      <button class="btn-styling" onclick="main('easy')">EASY</button>
+      <button class="btn-styling" onclick="main('medium')">MEDIUM</button>
+      <button class="btn-styling" onclick="main('hard')">HARD</button>
+    </div>
+    <h3 id="player"></h3>
+    <h3 id="score"></h3>
+    <div class="flex">
+      <table></table>
+    </div>
+    <h3 class="userClicked"></h3>
+
+    <div class="div-styling">
+      <table id="winnerTable">
+        <thead>
+          <th>RANK</th>
+          <th>Name</th>
+          <th>Attempts</th>
+        </thead>
+
+        <tbody></tbody>
+      </table>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
